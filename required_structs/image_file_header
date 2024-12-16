@@ -1,0 +1,27 @@
+typedef struct _IMAGE_FILE_HEADER {
+	WORD Machine;
+	WORD NumberOfSections;
+	DWORD TimeDateStamp;
+	DWORD PointerToSymbolTable;
+	DWORD NumberOfSymbols;
+	WORD SizeOfOptionalHeader;
+	WORD Characteristics;
+} IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
+
+// Machine indicated the type of CPU Architecture the executable is targeting
+// Possible values of machine:
+// 0x8864 (AMD64)
+// 0x14C (i386)
+
+// NumberOfSections holds the number of sections headers aka size of section table
+
+// TimeDateStamp is a unix timestamp that indicates when a file was created
+
+// PointerToSymbolTable and NumberOfSymbols hold the offset to COFF symbol
+// table and number of entries in that symbol table
+// They get set to 0 which means no COFF symbol table is present
+
+// SizeOfOptionalHeader (literally the name lol)
+
+// Characteristics is a flag that indicates the attributes of the file
+// i.e. the file is an executable, the file is a system file not user program

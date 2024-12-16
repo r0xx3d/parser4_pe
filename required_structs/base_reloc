@@ -1,0 +1,11 @@
+typedef struct _IMAGE_BASE_RELOCATION {
+	DWORD VirtualAddress;
+	DWORD SizeOfBlock;
+} IMAGE_BASE_RELOCATION;
+typedef IMAGE_BASE_RELOCATION UNALIGNED *PIMAGE_BASE_RELOCATION;
+
+// IMAGE_BASE_RELOCATION struct specifies the page RVA and size of reloc block
+
+// each offset field entry is a WORD
+// first 4 bits define relocations type
+// last 12 bits store an offset from RVA specified in IMAGE_BASE_RELOCATION

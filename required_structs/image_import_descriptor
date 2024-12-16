@@ -1,0 +1,24 @@
+typedef struct _IMAGE_IMPORT_DESCRIPTOR {
+	union {
+		DWORD Characteristics;
+		DWORD OriginialFirstThunk;
+	} DUMMYUNIONNAME;
+	DWORD TimeDateStamp;
+	DWORD ForwarderChain;
+	DWORD Name;
+	DWORD FirstThunk;
+} IMAGE_IMPORT_DESCRIPTOR;
+typedef IMAGE_IMPORT_DESCRIPTOR UNALIGNED *PIMAGE_IMPORT_DESCRIPTOR;
+
+// OriginalFirstThunk: RVA of the ILT
+
+// TimeDateStamp set to 0 by default if not bound
+// set to -1 if bound (more on this in IMAGE_BOUND_IMPORT_DESCRIPTOR)
+
+// ForwarderChain is responsible for DLL forwarding
+// DLL forwards some of its exported functions to another DLL
+
+// Name: an RVA of ASCII string that contains name of imported DLL
+
+// FirstThunk: RVA of IAT
+

@@ -1,0 +1,27 @@
+// e_magic: occupies 2 bytes(WORD) and has value (0x5A4D or MZ in ascii)
+
+// e_lfanew: last member of dos header, located at offset 0x3C
+// holds an offset to the start of the NT header
+// tells the PE loader where to look for the file header 
+
+typedef struct _IMAGE_DOS_HEADER {      // DOS .exe header
+	WORD e_magic;			// magic number
+	WORD e_cblp;			// bytes on last page of file
+	WORD e_cp;			// pages in file
+	WORD e_crlc;			// relocations
+	WORD e_parhdr;			// size of header in paragraphs
+	WORD e_minalloc;		// minimum extra paragraphs needed
+	WORD e_maxalloc;		// maximum extra paragraphs needed
+	WORD e_ss;			// initial (relative) SS value
+	WORD e_sp;			// initial SP value
+	WORD e_csum;			// checksum
+	WORD e_ip;			// initial ip value
+	WORD e_cs; 			// initial (relative) CS value
+	WORD e_lfarlc;			// file address of relocation table
+	WORD e_ovno;			// overlay number
+	WORD e_res[4];			// reserved words
+	WORD e_oemid;			// OEM identifier (for e_oeminfo)
+	WORD e_oeminfo;			// OEM info; e_oemid specific
+	WORD e_res[2];			// reserved words
+	LONG e_lfanew;			// file address of new exe header
+} IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;

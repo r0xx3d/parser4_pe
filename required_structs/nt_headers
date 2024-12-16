@@ -1,0 +1,17 @@
+typedef struct _IMAGE_NT_HEADERS64 {
+	DWORD Signature;
+	IMAGE_FILE_HEADER FileHeader;
+	IMAGE_OPTIONAL_HEADER64 OptionalHeader;
+} IMAGE_NT_HEDAERS64, *PIMAGE_NT_HEADERS64;
+
+typedef struct _IMAGE_NT_HEADERS {
+	DWORD Signature;
+	IMAGE_FILE_HEADER FileHeader;
+	IMAGE_OPTIONAL_HEADERS32 OptionalHeader;
+} IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADER32;
+
+// Fixed value of 0x50450000 which translates to PE\0\0 in ASCII
+
+
+
+
